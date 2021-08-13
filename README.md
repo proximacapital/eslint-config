@@ -1,1 +1,1 @@
-# proximacapital-{REPO_NAME}
+# Proxima Capital's ESLint-Config

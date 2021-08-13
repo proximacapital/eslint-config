@@ -25,7 +25,7 @@ module.exports = {
             },
         }
     ],
-    ignorePatterns: [".eslintrc.js", "Gulpfile.js"],
+    ignorePatterns: ["index.js", ".eslintrc", "Gulpfile.js"],
     rules: {
         "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
         "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
@@ -209,10 +209,10 @@ module.exports = {
             4,
             {
                 "SwitchCase": 1,
-                "ignoredNodes": [ "ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]" ]
+                "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"]
             },
         ],
-        //"@typescript-eslint/no-explicit-any": ["warn", { "fixToUnknown": true }],
+        "@typescript-eslint/no-explicit-any": ["warn", { "fixToUnknown": true }],
         /*
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
