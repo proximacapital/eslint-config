@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:proximacapital/esling-config.git"
+    "url": "git+ssh://git@github.com:proximacapital/eslint-config.git"
   },
-  "homepage": "https://github.com/proximacapital/esling-config/blob/master/README.md",
+  "homepage": "https://github.com/proximacapital/eslint-config/blob/master/README.md",
   "engines": {
     "node": "^16.6",
     "npm": ">= 7.13.0"
