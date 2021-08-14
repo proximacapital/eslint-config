@@ -1,5 +1,5 @@
-import { Class } from "@Src/Class";
 import test, { ExecutionContext } from "ava";
+import { Class } from "@Src/Class";
 
 test("Example Test", (t: ExecutionContext): void =>
 {
