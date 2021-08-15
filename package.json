@@ -11,7 +11,9 @@
     "npm": ">= 7.13.0"
   },
   "main": "index.js",
-  "files": "index.js",
+  "files": [
+    "index.js"
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
