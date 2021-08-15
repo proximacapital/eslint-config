@@ -25,7 +25,7 @@ module.exports = {
             },
         }
     ],
-    ignorePatterns: ["index.js", ".eslintrc*", "Gulpfile.js"],
+    ignorePatterns: ["index.js", "Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
     rules: {
         "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
         "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
