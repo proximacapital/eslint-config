@@ -16,7 +16,7 @@ module.exports = {
 You can also opt to specify your configuration via `package.json` and in this instance you wouldn't need an `eslintrc` file in your root directory:
 ```json
   "eslintConfig": {
-    "extends": "./Src/Rules/eslint-config"
+    "extends": "@proximacapital/eslint-config"
   },
   "devDependencies": {
     "@proximacapital/eslint-config": "0.0.2",
