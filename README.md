@@ -39,7 +39,7 @@ You can also opt to specify your configuration via `package.json` and in this in
 ```
 
 ## Development
-If you want to make additions to this configuration and don't want to wait between npm publishes, your best bet is to us [`npm link`](https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557) to symbolically link your changes to the package you want to try it out in.
+If you want to make additions to this configuration and don't want to wait between npm publishes, your best bet is to use [`npm link`](https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557) to symbolically link your changes to the package you want to try it out in.
 
 Let's say you wanted to make changes here and test them out in the `infrastructure` repo:
 ```bash
