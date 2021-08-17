@@ -22,6 +22,11 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
+      - name: Setup Git
+        run: |
+          git config user.name "Proximus Capitalus"
+          git config user.email "dev@proxima.capital"
+          
       - name: Dump Event Context
         env:
           CONTEXT: ${{ toJSON(github) }}
@@ -30,10 +35,8 @@ jobs:
       - name: Install and publish
         env: 
           GH_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           echo PR #${{ github.event.number }} has been merged
-          echo $GH_AUTH_TOKEN
-          git config user.name "Proximus Capitalus"
-          git config user.email "dev@proxima.capital"
           npm install -g np
-          sh .github/parse_title.sh ${{ github.event.pull_request.title }}
+          sh .github/parse_title.sh $PR_TITLE
