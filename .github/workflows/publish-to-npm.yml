@@ -9,6 +9,9 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with: 
+            fetch-depth: 0
 
       - name: Load .nvmrc
         run: echo ::set-output name=NVMRC::$(cat .nvmrc)
@@ -33,4 +36,4 @@ jobs:
           git config user.name "Proximus Capitalus"
           git config user.email "dev@proxima.capital"
           npm install -g np
-          np --branch master --any-branch --no-release-draft --no-tests --preview
+          sh .github/parse_title.sh ${{ github.event.pull_request.title }}
