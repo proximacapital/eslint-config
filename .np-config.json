@@ -1,0 +1,8 @@
+{
+    "anyBranch": true,
+    "publish": true,
+    "branch": "master",
+    "preview": false,
+    "tests": false,
+    "testScript": "np-tests"
+}
