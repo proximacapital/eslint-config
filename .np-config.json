@@ -1,8 +1,0 @@
-{
-    "anyBranch": true,
-    "publish": false,
-    "branch": "main",
-    "preview": false,
-    "tests": false,
-    "testScript": "np-tests"
-}
