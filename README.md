@@ -38,10 +38,6 @@ module.exports = {
     extends: "@proximacapital/eslint-config"
 }
 ```
-
-## Usage in `@proximacapital/infrastructure`
-If you are already depending on infra for other parts of your repo, you don't need to add this repo to your dev dependencies. You can reference it immediately in your `.eslintrc*`, as indicated above.
-
 ## Development
 If you want to make additions to this configuration and don't want to wait between npm publishes, your best bet is to use [`npm link`](https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557) to symbolically link your changes to the package you want to try it out in.
 
