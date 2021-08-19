@@ -197,6 +197,16 @@ module.exports = {
         "no-fallthrough": "error",                                                                          // Require explicit comment when switch cases fall through
         "no-implicit-coercion": "error",
         "eqeqeq": "error", // enforce === and !===
+        "operator-linebreak": [ // force operators to sit at beginning of new line
+            "error",
+            "before",
+            {
+                "overrides":
+                {
+                    "=": "ignore"
+                }
+            }
+        ],
         "import-newlines/enforce": [
             "error",
             {
