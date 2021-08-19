@@ -1,7 +1,7 @@
 {
     "anyBranch": true,
     "publish": true,
-    "branch": "master",
+    "branch": "prod",
     "preview": false,
     "tests": false,
     "testScript": "np-tests"

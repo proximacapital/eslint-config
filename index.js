@@ -196,7 +196,17 @@ module.exports = {
         "key-spacing": "error",                                                                             // No space before colon in object literals
         "no-fallthrough": "error",                                                                          // Require explicit comment when switch cases fall through
         "no-implicit-coercion": "error",
-        "eqeqeq": "error", // enforce === and !===
+        "eqeqeq": "error", // enforce === and !==
+        "operator-linebreak": [ // force operators to sit at beginning of new line
+            "error",
+            "before",
+            {
+                "overrides":
+                {
+                    "=": "ignore"
+                }
+            }
+        ],
         "import-newlines/enforce": [
             "error",
             {
@@ -213,7 +223,7 @@ module.exports = {
                 "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"]
             },
         ],
-        "@typescript-eslint/no-explicit-any": ["warn", { "fixToUnknown": true }],
+        "@typescript-eslint/no-explicit-any": "warn",
         /*
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
