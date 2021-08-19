@@ -27,7 +27,7 @@ In either case, you'll need to add the following dev dependencies to your `packa
 This is the slickest way to access the config. Add the following object to the `package.json`:
 ```json
 "eslintConfig": {
-  "extends": "./node_modules/@proximacapital/eslint-config"
+  "extends": "@proximacapital/eslint-config"
 },
 ```
 ### 
@@ -40,20 +40,7 @@ module.exports = {
 ```
 
 ## Usage in `@proximacapital/infrastructure`
-If you are already depending on infra for other parts of your repo, you don't need to add this repo to your dev dependencies. Instead, you can source this repo from within infra:
-```json
-// in your package.json
-"eslintConfig": {
-  "extends": "./node_modules/@proximacapital/infrastructure/Src/Rules/eslint-config"
-}
-```
-or
-```js
-// in .eslintrc.json
-module.exports = {
-    extends: "@proximacapital/infrastructure/eslint-config"
-}
-```
+If you are already depending on infra for other parts of your repo, you don't need to add this repo to your dev dependencies. You can reference it immediately in your `.eslintrc*`, as indicated above.
 
 ## Development
 If you want to make additions to this configuration and don't want to wait between npm publishes, your best bet is to use [`npm link`](https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557) to symbolically link your changes to the package you want to try it out in.
