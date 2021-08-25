@@ -7,9 +7,7 @@ module.exports = {
     },
     plugins: [
         "@typescript-eslint",
-        "@typescript-eslint/tslint",
         "eslint-plugin-import",
-        "eslint-plugin-unicorn",
         "import-newlines",
         "typescript-sort-keys",
     ],
@@ -18,21 +16,39 @@ module.exports = {
         {
             files: ["*.js"],
             rules: {
-                "@typescript-eslint/tslint/config": "off",
                 "@typescript-eslint/typedef": "off",
                 "no-undef": "off",
                 "@typescript-eslint/no-var-requires": "off",
             },
         }
     ],
-    ignorePatterns: ["index.js", "Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
+    ignorePatterns: ["index.js", ".eslintrc*", "Gulpfile.js"],
     rules: {
-        "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
-        "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
-        "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "explicit" }],     // Must set private, public etc.
-        "@typescript-eslint/explicit-module-boundary-types": "off",                                         // Enforce return types on exported methods
-        "@typescript-eslint/member-delimiter-style": [                                                      // Require ";" after member declarations
-            "error",                                                                                        // Last ";" is not required on single line
+
+        // @typescript-eslint rules
+
+        "@typescript-eslint/array-type": ["error", { "default": "array" }], // Prefer number[] over Array<number>
+        "@typescript-eslint/dot-notation": "error",                         // Disallow obj["prop"] access
+        "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+                allowExpressions: false,
+                allowTypedFunctionExpressions: true,
+                allowHigherOrderFunctions: true,
+                allowDirectConstAssertionInArrowFunctions: true,
+                allowConciseArrowFunctionExpressionsStartingWithVoid: false,
+            }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [               // Must set private, public etc.
+            "error",
+            {
+                "accessibility": "explicit"
+            }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": "off",         // Enforce return types on exported methods
+        "@typescript-eslint/keyword-spacing": ["error"],                    // Require spaces before and after keywords (if, else)
+        "@typescript-eslint/member-delimiter-style": [                      // Require ";" after member declarations
+            "error",                                                        // Last ";" is not required on single line
             {
                 "multiline": {
                     "delimiter": "semi",
@@ -44,7 +60,7 @@ module.exports = {
                 }
             }
         ],
-        "@typescript-eslint/member-ordering": [                                                             // Grouping of similar properties together
+        "@typescript-eslint/member-ordering": [                             // Grouping of similar properties together
             "error",
             {
                 default: {
@@ -78,7 +94,7 @@ module.exports = {
                 },
             }
         ],
-        "@typescript-eslint/naming-convention": [                                                           // Define acceptable naming styles
+        "@typescript-eslint/naming-convention": [                 // Define acceptable naming styles
             "error",
             {
                 "selector": "interface",
@@ -105,64 +121,50 @@ module.exports = {
                 "format": ["camelCase", "PascalCase", "UPPER_CASE"],
             },
         ],
-        "@typescript-eslint/no-empty-function": "off",                                                      // Disallow empty functions, including callbacks
-        "@typescript-eslint/no-explicit-any": "off",                                                        // Disallow use of the "any" type
-        "@typescript-eslint/no-inferrable-types": "off",                                                    // Disallows const lNum: number = 0;
-        "@typescript-eslint/strict-boolean-expressions": "error",                                           // Disallows coercing non-booleans to boolean
-        "@typescript-eslint/no-non-null-assertion": "off",                                                  // Disallows usage of "!" e.g: lUndefined!;
-        "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "varsIgnorePattern": "^__" }],     // Disallows unused vars, unless __Type;
-        "@typescript-eslint/prefer-nullish-coalescing": "error",                                            // Prefer "??" over "||", so we don't do a falsy check
-        "@typescript-eslint/prefer-readonly": "error",                                                      // Prefer readonly private members where possible
-        "@typescript-eslint/quotes": ["error", "double", { "allowTemplateLiterals": true }],                // Use "" quotes instead of '', or ``
-        "@typescript-eslint/type-annotation-spacing": "error",                                              // const foo: number, space after ":"
-        "@typescript-eslint/switch-exhaustiveness-check": "error",                                          // Requires all branches to be covered or a default
-        "@typescript-eslint/tslint/config": [                                                               // Legacy tslint rules, runs our semicolon rules
+        "@typescript-eslint/no-empty-function": "off",                                   // Disallow empty functions, including callbacks
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-inferrable-types": "off",                                 // Disallows const lNum: number = 0;
+        "@typescript-eslint/no-non-null-assertion": "off",                               // Disallows usage of "!" e.g: lUndefined!;
+        "@typescript-eslint/no-unused-vars": [                                           // Disallows unused vars, unless __Type;
             "error",
             {
-                "rules": {
-                    "typedef": [                                                                            // Typedef not required on const lFunc = (): void => {}
-                        true,
-                        "arrow-call-signature",
-                        "arrow-parameter",
-                        "call-signature",
-                        "member-variable-declaration",
-                        "parameter",
-                        "property-declaration",
-                        "variable-declaration",
-                        "variable-declaration-ignore-function"
-                    ],
-                    "whitespace": [
-                        true,
-                        "check-branch",
-                        "check-decl",
-                        "check-operator",
-                        "check-separator",
-                        "check-type",
-                        "check-type-operator",
-                        "check-preblock"
-                    ],
-                    "ordered-imports": true,
-                    "semicolon": [true, "always"],
-                }
+                "ignoreRestSiblings": true,
+                "varsIgnorePattern": "^__"
             }
         ],
+        "@typescript-eslint/prefer-nullish-coalescing": "error",                         // Prefer "??" over "||", so we don't do a falsy check
+        "@typescript-eslint/prefer-readonly": "error",                                   // Prefer readonly private members where possible
+        "@typescript-eslint/quotes": [                                                   // Use "" quotes instead of '', or ``
+            "error",
+            "double",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],
+        "@typescript-eslint/strict-boolean-expressions": "error",                        // Disallows coercing non-booleans to boolean
+        "@typescript-eslint/switch-exhaustiveness-check": "error",                       // Requires all branches to be covered or a default
         "@typescript-eslint/typedef": [
             "error",
             {
-                "arrayDestructuring": false,                                                                // Infer types on array destructuring
+                "arrayDestructuring": false,                                             // Infer types on array destructuring
                 "arrowParameter": true,
                 "memberVariableDeclaration": true,
-                "objectDestructuring": false,                                                               // Infer types on object destructuring
+                "objectDestructuring": false,                                            // Infer types on object destructuring
                 "parameter": true,
                 "propertyDeclaration": true,
                 "variableDeclaration": true,
                 "variableDeclarationIgnoreFunction": true
             }
         ],
-        "typescript-sort-keys/string-enum": ["error", "asc", { "caseSensitive": true }],                    // Sort string enums alphabetically
-        "arrow-parens": ["error", "always"],                                                                // Force parens around arrow arguments
-        "brace-style": ["error", "allman", { "allowSingleLine": true }],                                    // Parenthetically correct braces
-        "comma-dangle": [                                                                                   // Force dangling commas if }/]/) appears on newline
+        "@typescript-eslint/type-annotation-spacing": "error",                           // const foo: number, space after ":"
+
+        // eslint rules
+
+        "arrow-parens": ["error", "always"],                                             // Force parens around arrow arguments
+        "arrow-spacing": "error",                                                        // Require space before and after =>, () => {}
+        "brace-style": ["error", "allman", { "allowSingleLine": true }],                 // Parenthetically correct braces
+        "comma-dangle": [                                                                // Force dangling commas if }/]/) appears on newline
             "error",
             {
                 arrays: "always-multiline",
@@ -172,41 +174,51 @@ module.exports = {
                 functions: "always-multiline",
             },
         ],
-        "function-paren-newline": ["error", "multiline-arguments"],                                         // Multiline functions must have close paren on newline
-        "function-call-argument-newline": ["error", "consistent"],                                          // Multiline arguments must all be on newline
-        "curly": ["error", "multi-line", "consistent"],                                                     // Always use curly unless if and else are one-line
-        "eol-last": "error",                                                                                // Force files to end with newline
-        "max-len": ["error", { "ignorePattern": "//", "code": 120 }],                                       // Max line-length of 120 columns, ignore comments
-        "newline-per-chained-call": "off",                                                                  // Force chained calls (.then) onto new lines
-        "no-async-promise-executor": "error",                                                               // Only allow synchronous promise executors
-        "no-console": "error",                                                                              // Disallow calls to console.log
-        "no-duplicate-imports": "error",                                                                    // Imports from the same file must be merged
-        "no-irregular-whitespace": "error",                                                                 // Disallow weird whitespace characters
-        "no-multiple-empty-lines": "error",                                                                 // Allow at most one empty line between code
-        "no-trailing-spaces": "error",                                                                      // Strip whitespace after line ends
-        "object-curly-spacing": ["error", "always"], // TODO: Test { a:0 }                                  // Requires spaces like: { a: 0 }
-        "one-var": ["error", "never"],                                                                      // Requires a keyword per declared var
-        "prefer-const": "error",                                                                            // If a var is not re-assigned, force const
-        "spaced-comment": ["error", "always", { "markers": ["/"] }],                                        // Require a space after "//" like in this file
-        "space-before-function-paren": ["error", "never"], "space-in-parens": ["error", "never"],           // func(x) vs func (x), we use no space
-        "space-before-blocks": ["error", "always"],                                                         // Space before "{}", like func() {}
-        "arrow-spacing": "error",                                                                           // Require space before and after =>, () => {}
-        "keyword-spacing": "error",                                                                         // Require spaces before and after keywords (if, else)
-        "import/no-default-export": "error",                                                                // Disallow default (unnamed) exports
-        "key-spacing": "error",                                                                             // No space before colon in object literals
-        "no-fallthrough": "error",                                                                          // Require explicit comment when switch cases fall through
-        "no-implicit-coercion": "error",
-        "eqeqeq": "error", // enforce === and !==
-        "operator-linebreak": [ // force operators to sit at beginning of new line
+        "comma-spacing": "error",                                                        // Force a,b => a, b
+        "curly": ["error", "multi-line", "consistent"],                                  // Always use curly unless if and else are one-line
+        "eol-last": "error",                                                             // Force files to end with newline
+        "eqeqeq": "error",                                                               // enforce === and !==
+        "function-call-argument-newline": ["error", "consistent"],                       // Multiline arguments must all be on newline
+        "function-paren-newline": ["error", "multiline-arguments"],                      // Multiline functions must have close paren on newline
+        "indent": [
             "error",
-            "before",
+            4,
             {
-                "overrides":
-                {
-                    "=": "ignore"
-                }
-            }
+                "SwitchCase": 1,
+                "ignoredNodes": [
+                    "ArrowFunctionExpression",
+                    "LogicalExpression",
+                    "SwitchCase[consequent]",
+                ],
+            },
         ],
+        "keyword-spacing": "off",                                                        // disable to allow for @typescript-eslint rule
+        "key-spacing": "error",                                                          // No space before colon in object literals
+        "max-len": ["error", { "ignorePattern": "//", "code": 120 }],                    // Max line-length of 120 columns, ignore comments
+        "newline-per-chained-call": "off",                                               // Force chained calls (.then) onto new lines
+        "no-async-promise-executor": "error",                                            // Only allow synchronous promise executors
+        "no-console": "error",                                                           // Disallow calls to console.log
+        "no-duplicate-imports": "error",                                                 // Imports from the same file must be merged
+        "no-fallthrough": "error",                                                       // Require explicit comment when switch cases fall through
+        "no-implicit-coercion": "error",
+        "no-irregular-whitespace": "error",                                              // Disallow weird whitespace characters
+        "no-multiple-empty-lines": "error",                                              // Allow at most one empty line between code
+        "no-trailing-spaces": "error",                                                   // Strip whitespace after line ends
+        "object-curly-spacing": ["error", "always"],                                     // TODO: Test { a:0 }  -- Requires spaces like: { a: 0 }
+        "one-var": ["error", "never"],                                                   // Requires a keyword per declared var
+        "operator-linebreak": ["error", "before", { "overrides": { "=": "ignore" } }],   // force operators to sit at beginning of new line
+        "prefer-const": "error",                                                         // If a var is not re-assigned, force const
+        "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+        "sort-imports": ["error", { "ignoreDeclarationSort": false }],
+        "spaced-comment": ["error", "always", { "markers": ["/"] }],                     // Require a space after "//" like in this file
+        "space-before-blocks": ["error", "always"],                                      // Space before "{}", like func() {}
+        "space-before-function-paren": ["error", "never"],
+        "space-infix-ops": "off",                                                        // disable to allow for @typescript-eslint rule
+        "space-in-parens": ["error", "never"],                                           // func(x) vs func (x), we use no space
+        "import/no-default-export": "error",                                             // Disallow default (unnamed) exports
+
+        // import-newlines rules
+
         "import-newlines/enforce": [
             "error",
             {
@@ -215,15 +227,10 @@ module.exports = {
                 "semi": false,
             }
         ],
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1,
-                "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"]
-            },
-        ],
-        "@typescript-eslint/no-explicit-any": "warn",
+
+        // typescript-sort-keys rules
+
+        "typescript-sort-keys/string-enum": ["error", "asc", { "caseSensitive": true }], // Sort string enums alphabetically
         /*
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
