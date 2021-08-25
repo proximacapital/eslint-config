@@ -215,6 +215,9 @@ module.exports = {
         "space-before-function-paren": ["error", "never"],
         "space-infix-ops": "off",                                                        // disable to allow for @typescript-eslint rule
         "space-in-parens": ["error", "never"],                                           // func(x) vs func (x), we use no space
+        
+        // eslint-plugin-import rules
+        
         "import/no-default-export": "error",                                             // Disallow default (unnamed) exports
 
         // import-newlines rules
