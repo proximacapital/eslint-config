@@ -108,6 +108,7 @@ module.exports = {
         "@typescript-eslint/no-empty-function": "off",                                                      // Disallow empty functions, including callbacks
         "@typescript-eslint/no-explicit-any": "off",                                                        // Disallow use of the "any" type
         "@typescript-eslint/no-inferrable-types": "off",                                                    // Disallows const lNum: number = 0;
+        "@typescript-eslint/no-unnecessary-condition": "off",                                               // Dissallows unnecessary "?.", "if (0 === 0)" etc
         "@typescript-eslint/strict-boolean-expressions": "error",                                           // Disallows coercing non-booleans to boolean
         "@typescript-eslint/no-non-null-assertion": "off",                                                  // Disallows usage of "!" e.g: lUndefined!;
         "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "varsIgnorePattern": "^__" }],     // Disallows unused vars, unless __Type;
@@ -184,9 +185,14 @@ module.exports = {
         "no-irregular-whitespace": "error",                                                                 // Disallow weird whitespace characters
         "no-multiple-empty-lines": "error",                                                                 // Allow at most one empty line between code
         "no-trailing-spaces": "error",                                                                      // Strip whitespace after line ends
+        "no-useless-escape": "error",                                                                       // Disallow char escapes with no effect
+        "no-useless-call": "error",                                                                         // Disallow uselss usage of .call & .apply
+        "no-useless-catch": "error",                                                                        // Disallow catching only to throw
+        "no-useless-computed-key": ["error", { "enforceClassMembers": true }],                              // Prefer { a: 0 } over { ["a"]: 0 }
         "object-curly-spacing": ["error", "always"], // TODO: Test { a:0 }                                  // Requires spaces like: { a: 0 }
         "one-var": ["error", "never"],                                                                      // Requires a keyword per declared var
         "prefer-const": "error",                                                                            // If a var is not re-assigned, force const
+        "prefer-spread": "error",                                                                           // Replace .apply with ... where possible
         "spaced-comment": ["error", "always", { "markers": ["/"] }],                                        // Require a space after "//" like in this file
         "space-before-function-paren": ["error", "never"], "space-in-parens": ["error", "never"],           // func(x) vs func (x), we use no space
         "space-before-blocks": ["error", "always"],                                                         // Space before "{}", like func() {}
