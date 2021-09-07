@@ -188,7 +188,7 @@ module.exports = {
         "no-useless-escape": "error",                                                                       // Disallow char escapes with no effect
         "no-useless-call": "error",                                                                         // Disallow uselss usage of .call & .apply
         "no-useless-catch": "error",                                                                        // Disallow catching only to throw
-        "no-useless-computed-key": ["error", { "enforceClassMembers": true }],                              // Prefer { a: 0 } over { ["a"]: 0 }
+        "no-useless-computed-key": ["error", { "enforceForClassMembers": true }],                           // Prefer { a: 0 } over { ["a"]: 0 }
         "object-curly-spacing": ["error", "always"], // TODO: Test { a:0 }                                  // Requires spaces like: { a: 0 }
         "one-var": ["error", "never"],                                                                      // Requires a keyword per declared var
         "prefer-const": "error",                                                                            // If a var is not re-assigned, force const
