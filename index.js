@@ -111,6 +111,7 @@ module.exports = {
         "@typescript-eslint/no-unnecessary-condition": "off",                                               // Dissallows unnecessary "?.", "if (0 === 0)" etc
         "@typescript-eslint/strict-boolean-expressions": "error",                                           // Disallows coercing non-booleans to boolean
         "@typescript-eslint/no-non-null-assertion": "off",                                                  // Disallows usage of "!" e.g: lUndefined!;
+        "no-unused-vars": "off",                                                                            // turn off eslint variant for correct @typescript output
         "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "varsIgnorePattern": "^__" }],     // Disallows unused vars, unless __Type;
         "@typescript-eslint/prefer-nullish-coalescing": "error",                                            // Prefer "??" over "||", so we don't do a falsy check
         "@typescript-eslint/prefer-readonly": "error",                                                      // Prefer readonly private members where possible
