@@ -121,17 +121,6 @@ module.exports = {
             "error",
             {
                 "rules": {
-                    "typedef": [                                                                            // Typedef not required on const lFunc = (): void => {}
-                        true,
-                        "arrow-call-signature",
-                        "arrow-parameter",
-                        "call-signature",
-                        "member-variable-declaration",
-                        "parameter",
-                        "property-declaration",
-                        "variable-declaration",
-                        "variable-declaration-ignore-function"
-                    ],
                     "whitespace": [
                         true,
                         "check-branch",
