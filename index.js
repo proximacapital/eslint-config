@@ -208,7 +208,7 @@ module.exports = {
             {
                 "items": 6,
                 "max-len": 120,
-                "semi": false,
+                "semi": true,
             }
         ],
         "indent": [
@@ -216,7 +216,8 @@ module.exports = {
             4,
             {
                 "SwitchCase": 1,
-                "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"]
+                "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"],
+                "ImportDeclaration": "first",
             },
         ],
         "@typescript-eslint/no-explicit-any": "warn",
