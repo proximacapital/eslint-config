@@ -24,8 +24,15 @@ module.exports = {
                 "@typescript-eslint/no-var-requires": "off",
             },
         },
+        {
+            files: ["*.test.ts"],
+            rules: {
+                "@typescript-eslint/no-non-null-assertion": "error",
+                "@typescript-eslint/dot-notation": "error",
+            },
+        },
     ],
-    ignorePatterns: ["index.js", "Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
+    ignorePatterns: ["Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
     rules: {
         "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
         "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
