@@ -30,7 +30,7 @@ module.exports = {
         "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
         "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
         "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "explicit" }],     // Must set private, public etc.
-        "@typescript-eslint/explicit-module-boundary-types": "off",                                         // Enforce return types on exported methods
+        "@typescript-eslint/explicit-module-boundary-types": "error",                                       // Enforce return types on exported methods
         "@typescript-eslint/member-delimiter-style": [                                                      // Require ";" after member declarations
             "error",                                                                                        // Last ";" is not required on single line
             {
@@ -106,11 +106,11 @@ module.exports = {
             },
         ],
         "@typescript-eslint/no-empty-function": "off",                                                      // Disallow empty functions, including callbacks
-        "@typescript-eslint/no-explicit-any": "off",                                                        // Disallow use of the "any" type
-        "@typescript-eslint/no-inferrable-types": "off",                                                    // Disallows const lNum: number = 0;
-        "@typescript-eslint/no-unnecessary-condition": "off",                                               // Dissallows unnecessary "?.", "if (0 === 0)" etc
+        "@typescript-eslint/no-explicit-any": "error",                                                      // Disallow use of the "any" type
+        "@typescript-eslint/no-inferrable-types": "off",                                                    // Require type info even when assigning literals
+        "@typescript-eslint/no-unnecessary-condition": "error",                                             // Dissallows unnecessary "?.", "if (0 === 0)" etc
         "@typescript-eslint/strict-boolean-expressions": "error",                                           // Disallows coercing non-booleans to boolean
-        "@typescript-eslint/no-non-null-assertion": "off",                                                  // Disallows usage of "!" e.g: lUndefined!;
+        "@typescript-eslint/no-non-null-assertion": "error",                                                // Disallows usage of "!" e.g: lUndefined!;
         "no-unused-vars": "off",                                                                            // turn off eslint variant for correct @typescript output
         "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "varsIgnorePattern": "^__" }],     // Disallows unused vars, unless __Type;
         "@typescript-eslint/prefer-nullish-coalescing": "error",                                            // Prefer "??" over "||", so we don't do a falsy check
@@ -219,7 +219,6 @@ module.exports = {
                 "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"]
             },
         ],
-        "@typescript-eslint/no-explicit-any": "warn",
         /*
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
