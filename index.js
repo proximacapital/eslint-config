@@ -3,7 +3,7 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     parserOptions: {
         project: "tsconfig.json",
-        sourceType: "module"
+        sourceType: "module",
     },
     plugins: [
         "@typescript-eslint",
@@ -23,7 +23,7 @@ module.exports = {
                 "no-undef": "off",
                 "@typescript-eslint/no-var-requires": "off",
             },
-        }
+        },
     ],
     ignorePatterns: ["index.js", "Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
     rules: {
@@ -36,11 +36,11 @@ module.exports = {
             {
                 "multiline": {
                     "delimiter": "semi",
-                    "requireLast": true
+                    "requireLast": true,
                 },
                 "singleline": {
                     "delimiter": "semi",
-                    "requireLast": false
+                    "requireLast": false,
                 }
             }
         ],
@@ -76,7 +76,7 @@ module.exports = {
                         "public-method",
                     ],
                 },
-            }
+            },
         ],
         "@typescript-eslint/naming-convention": [                                                           // Define acceptable naming styles
             "error",
@@ -134,8 +134,8 @@ module.exports = {
                     ],
                     "ordered-imports": true,
                     "semicolon": [true, "always"],
-                }
-            }
+                },
+            },
         ],
         "@typescript-eslint/typedef": [
             "error",
@@ -147,7 +147,7 @@ module.exports = {
                 "parameter": true,
                 "propertyDeclaration": true,
                 "variableDeclaration": true,
-                "variableDeclarationIgnoreFunction": true
+                "variableDeclarationIgnoreFunction": true,
             }
         ],
         "typescript-sort-keys/string-enum": ["error", "asc", { "caseSensitive": true }],                    // Sort string enums alphabetically
@@ -216,7 +216,7 @@ module.exports = {
             4,
             {
                 "SwitchCase": 1,
-                "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"]
+                "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"],
             },
         ],
         /*
