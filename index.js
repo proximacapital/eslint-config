@@ -176,6 +176,7 @@ module.exports = {
         "eol-last": "error",                                                                                // Force files to end with newline
         "max-len": ["error", { "ignorePattern": "//", "code": 120 }],                                       // Max line-length of 120 columns, ignore comments
         "newline-per-chained-call": "off",                                                                  // Force chained calls (.then) onto new lines
+        "no-extend-native": "error",                                                                        // Disallow adding properties to in-built prototypes
         "no-async-promise-executor": "error",                                                               // Only allow synchronous promise executors
         "no-console": "error",                                                                              // Disallow calls to console.log
         "no-duplicate-imports": "error",                                                                    // Imports from the same file must be merged
