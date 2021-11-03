@@ -25,10 +25,10 @@ module.exports = {
             },
         },
         {
-            files: ["*.test.ts"],
+            files: ["*.test.ts", "*.demo.ts", "*.bench.ts"],
             rules: {
-                "@typescript-eslint/no-non-null-assertion": "error",
-                "@typescript-eslint/dot-notation": "error",
+                "@typescript-eslint/no-non-null-assertion": "off",
+                "@typescript-eslint/dot-notation": "off",
             },
         },
     ],
