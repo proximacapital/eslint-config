@@ -37,7 +37,10 @@ module.exports = {
         "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
         "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
         "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "explicit" }],     // Must set private, public etc.
-        "@typescript-eslint/explicit-module-boundary-types": "error",                                       // Enforce return types on exported methods
+        "@typescript-eslint/explicit-module-boundary-types": [                                              // Enforce return types on exported methods
+            "error",
+            { "allowArgumentsExplicitlyTypedAsAny": true },
+        ],
         "@typescript-eslint/member-delimiter-style": [                                                      // Require ";" after member declarations
             "error",                                                                                        // Last ";" is not required on single line
             {
@@ -200,8 +203,8 @@ module.exports = {
         "key-spacing": "error",                                                                             // No space before colon in object literals
         "no-fallthrough": "error",                                                                          // Require explicit comment when switch cases fall through
         "no-implicit-coercion": "error",
-        "eqeqeq": "error", // enforce === and !==
-        "operator-linebreak": [ // force operators to sit at beginning of new line
+        "eqeqeq": "error",                                                                                  // enforce === and !==
+        "operator-linebreak": [                                                                             // force operators to sit at beginning of new line
             "error",
             "before",
             {
@@ -227,14 +230,14 @@ module.exports = {
                 "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"],
             },
         ],
-        /*
+       /**
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
         * - AST explorer: https://astexplorer.net/
         * - ESLint on Selectors: https://eslint.org/docs/4.0.0/developer-guide/selectors
         * - ESLint Indent: https://eslint.org/docs/rules/indent
         * - Syntax Tree Format: https://esprima.readthedocs.io/en/latest/syntax-tree-format.html
-        */
+       **/
     },
     reportUnusedDisableDirectives: true,
 };
