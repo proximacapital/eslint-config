@@ -7,8 +7,8 @@
   },
   "homepage": "https://github.com/proximacapital/eslint-config/blob/master/README.md",
   "engines": {
-    "node": "16.6",
-    "npm": ">= 7.13.0"
+    "node": "^16.6 || ^14.16",
+    "npm": ">= 6.14"
   },
   "main": "index.js",
   "files": [
