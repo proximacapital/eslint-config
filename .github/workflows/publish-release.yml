@@ -29,5 +29,5 @@ jobs:
 
     - name: Publish
       env:
-        PROXIMA_PACKAGE_TOKEN: ${{ secrets.PROXIMA_CI }}
-      run: npm publish
+        PROXIMA_OSS_PACKAGE_TOKEN: ${{ secrets.PROXIMA_OSS_PACKAGE_TOKEN }}
+      run: npm publish --access public
