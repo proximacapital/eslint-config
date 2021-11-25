@@ -1,9 +1,9 @@
 {
-  "name": "@proximacapital/eslint-config",
+  "name": "@proxima-oss/eslint-config",
   "version": "4.0.2",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:proximacapital/eslint-config.git"
+    "url": "git+ssh://git@github.com/proximacapital/eslint-config.git"
   },
   "homepage": "https://github.com/proximacapital/eslint-config/blob/master/README.md",
   "engines": {
@@ -15,7 +15,7 @@
     "index.js"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "scripts": {},
   "peerDependencies": {
@@ -32,5 +32,11 @@
   "keywords": [
     "eslint",
     "eslintconfig"
-  ]
+  ],
+  "description": "This repo contains Proxima's canonical `eslint` config, it is strongly recommended that you keep your `TypeScript` repositories in-line with this config where possible. Currently all the rules are sitting inside the `index.js` (which is exported via the `package.json`); however a refactor may eventually occur that breaks the rules up into various files for easier management.",
+  "bugs": {
+    "url": "https://github.com/proximacapital/eslint-config/issues"
+  },
+  "author": "Proxima Capital",
+  "license": "ISC"
 }
