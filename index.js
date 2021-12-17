@@ -160,6 +160,7 @@ module.exports = {
                 "variableDeclarationIgnoreFunction": true,
             }
         ],
+        "@typescript-eslint/explicit-function-return-type": "error",                                        // force functions to declare return type
         "typescript-sort-keys/string-enum": ["error", "asc", { "caseSensitive": true }],                    // Sort string enums alphabetically
         "arrow-parens": ["error", "always"],                                                                // Force parens around arrow arguments
         "brace-style": ["error", "allman", { "allowSingleLine": true }],                                    // Parenthetically correct braces
