@@ -1,6 +1,6 @@
 {
   "name": "@proxima-oss/eslint-config",
-  "version": "4.0.4",
+  "version": "5.0.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/proximacapital/eslint-config.git"
