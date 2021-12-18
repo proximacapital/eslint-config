@@ -11,7 +11,6 @@ module.exports = {
         "@typescript-eslint",
         "@typescript-eslint/tslint",
         "eslint-plugin-import",
-        "eslint-plugin-unicorn",
         "import-newlines",
         "typescript-sort-keys",
     ],
