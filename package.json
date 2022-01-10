@@ -34,7 +34,7 @@
     "@rushstack/eslint-patch": "1.1.0",
     "@typescript-eslint/eslint-plugin": "5.4.0",
     "@typescript-eslint/eslint-plugin-tslint": "5.4.0",
-    "@typescript-eslint/parser": "5.4.0",
+    "@typescript-eslint/parser": "5.9.0",
     "eslint": "8.3.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-import-newlines": "1.1.5",
