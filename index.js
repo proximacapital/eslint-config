@@ -12,7 +12,6 @@ module.exports = {
         "@typescript-eslint/tslint",
         "eslint-plugin-import",
         "import-newlines",
-        "typescript-sort-keys",
     ],
     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
     overrides: [
@@ -162,7 +161,6 @@ module.exports = {
             }
         ],
         "@typescript-eslint/explicit-function-return-type": "error",                                        // force functions to declare return type
-        "typescript-sort-keys/string-enum": ["error", "asc", { "caseSensitive": true }],                    // Sort string enums alphabetically
         "arrow-parens": ["error", "always"],                                                                // Force parens around arrow arguments
         "brace-style": ["error", "allman", { "allowSingleLine": true }],                                    // Parenthetically correct braces
         "comma-dangle": [                                                                                   // Force dangling commas if }/]/) appears on newline

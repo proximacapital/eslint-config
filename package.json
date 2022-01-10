@@ -38,7 +38,6 @@
     "eslint": "8.3.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-import-newlines": "1.1.5",
-    "eslint-plugin-typescript-sort-keys": "2.1.0",
     "tslint": "6.1.3"
   }
 }
