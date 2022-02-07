@@ -16,7 +16,7 @@ module.export = {
     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
     overrides: [
         {
-            files: ["*.ts"],
+            files: ["*.ts", "*.js"],
             rules: {
                 "@typescript-eslint/tslint/config": "off",
                 "@typescript-eslint/typedef": "off",

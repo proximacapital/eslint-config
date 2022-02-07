@@ -5,6 +5,7 @@ module.export = {
   overrides: [
     {
       "files": [
+        "*.js",
         "*.ts"
       ],
       "parserOptions": {
