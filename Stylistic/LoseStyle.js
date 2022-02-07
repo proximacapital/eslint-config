@@ -1,7 +1,7 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
-  extends: "./Stylistic/StrictStyle",
+  extends: "ESLINT-CONFIG/Stylistic/StrictStyle",
   overrides: [
     {
       "parserOptions": {
