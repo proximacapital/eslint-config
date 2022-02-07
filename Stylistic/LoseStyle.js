@@ -1,6 +1,3 @@
-require("@rushstack/eslint-patch/modern-module-resolution");
-StrictStyle =  require("./StrictStyle");
-
 module.export = {
   extends: "./StrictStyle",
   overrides: [
