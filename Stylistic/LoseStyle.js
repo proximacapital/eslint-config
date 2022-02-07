@@ -4,7 +4,7 @@ module.exports = {
   extends: "./StrictStyle.js",
   overrides: [
     {
-      files: ["*.ts", "*.js"],
+      files: ["*.js"],
       "parserOptions": {
         "project": [
           "./tsconfig.json"
