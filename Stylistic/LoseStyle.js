@@ -1,5 +1,5 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
-import { StrictStyle } from "./StrictStyle";
+StrictStyle =  require("./StrictStyle");
 
 module.export = StrictStyle.ignorePatterns("Typings").overrides([
     {
