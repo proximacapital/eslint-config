@@ -15,7 +15,6 @@
     "./strict": "./Stylistic/StrictStyle.js"
   },
   "files": [
-    "index.js",
     "Stylistic/*",
     "Correctness/*"
   ],
