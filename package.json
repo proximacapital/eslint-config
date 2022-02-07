@@ -10,7 +10,6 @@
     "node": "^16.6.1",
     "npm": ">=7.20.0"
   },
-  "main": "index.js",
   "exports": {
     "./lose": "./Stylistic/LoseStyle.js",
     "./strict": "./Stylistic/StrictStyle.js"

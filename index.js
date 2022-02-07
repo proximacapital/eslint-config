@@ -1,1 +1,0 @@
-export { LoseStyle, StrictStyle } from "./Stylistic"; 
