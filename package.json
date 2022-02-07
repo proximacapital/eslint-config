@@ -11,6 +11,10 @@
     "npm": ">=7.20.0"
   },
   "main": "index.js",
+  "exports": {
+    "./Lose": "./Stylistic/LoseStyle.js",
+    "./Strict": "./Stylistic/StrictStyle.js"
+  },
   "files": [
     "index.js"
   ],
