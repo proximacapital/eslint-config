@@ -12,8 +12,8 @@
   },
   "main": "index.js",
   "exports": {
-    "./Lose": "./Stylistic/LoseStyle.js",
-    "./Strict": "./Stylistic/StrictStyle.js"
+    "./lose": "./Stylistic/LoseStyle.js",
+    "./strict": "./Stylistic/StrictStyle.js"
   },
   "files": [
     "index.js",
