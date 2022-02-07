@@ -16,7 +16,9 @@
     "./Strict": "./Stylistic/StrictStyle.js"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "./Stylistic/*",
+    "./Correctness/*"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
