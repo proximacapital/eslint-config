@@ -1,6 +1,6 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
-module.export = {
+export const StrictStyle = {
     root: true,
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -241,3 +241,5 @@ module.export = {
     },
     reportUnusedDisableDirectives: true,
 };
+
+module.export = StrictStyle;
