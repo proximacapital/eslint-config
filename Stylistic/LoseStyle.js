@@ -1,7 +1,9 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 StrictStyle =  require("./StrictStyle");
 
-module.export = StrictStyle.ignorePatterns("Typings").overrides([
+module.export = {
+  extends: "./StrictStyle",
+  overrides: [
     {
       "files": [
         "*.ts"
@@ -24,4 +26,5 @@ module.export = StrictStyle.ignorePatterns("Typings").overrides([
         "no-constant-condition": "off"
       }
     }
-  ],);
+  ],  
+};
