@@ -17,8 +17,8 @@
   },
   "files": [
     "index.js",
-    "./Stylistic/*",
-    "./Correctness/*"
+    "Stylistic/*",
+    "Correctness/*"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
