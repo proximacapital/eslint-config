@@ -1,18 +1,14 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.export = {
-  extends: "./StrictStyle",
+  extends: "./Stylistic/StrictStyle",
   overrides: [
     {
-      "files": [
-        "*.js",
-        "*.ts"
-      ],
       "parserOptions": {
         "project": [
           "./tsconfig.json"
         ]
-      },
+      },  
       "rules": {
         "@typescript-eslint/typedef": "off",
         "@typescript-eslint/no-inferrable-types": [
