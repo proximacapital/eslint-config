@@ -4,6 +4,7 @@ module.exports = {
   extends: "ESLINT-CONFIG/Stylistic/StrictStyle",
   overrides: [
     {
+      files: ["*.ts", "*.js"],
       "parserOptions": {
         "project": [
           "./tsconfig.json"
