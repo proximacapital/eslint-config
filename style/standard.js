@@ -21,15 +21,6 @@ module.exports = {
         {
             files: ["*.ts"],
             "rules": {
-              "@typescript-eslint/typedef": "off",
-              "@typescript-eslint/no-inferrable-types": [
-                "error",
-                {
-                  "ignoreParameters": true,
-                  "ignoreProperties": true
-                }
-              ],
-              "@typescript-eslint/explicit-function-return-type": "error",
             }
         },
     ],
@@ -126,6 +117,14 @@ module.exports = {
         "arrow-spacing": "error",                                                                           // Require space before and after =>, () => {}
         "keyword-spacing": "error",                                                                         // Require spaces before and after keywords (if, else)
         "key-spacing": "error",                                                                             // No space before colon in object literals
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-inferrable-types": [
+            "error",
+            {
+                "ignoreParameters": true,
+                "ignoreProperties": true,
+            },
+        ],
         "operator-linebreak": [                                                                             // force operators to sit at beginning of new line
             "error",
             "before",

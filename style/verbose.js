@@ -6,7 +6,13 @@ module.exports = {
     {
       files: ["*.js", "*.ts"],
       "rules": {
-        "@typescript-eslint/typedef": [
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+      }
+    },
+  ],  
+  rules: {
+      "@typescript-eslint/typedef": [
           "error",
           {
               "arrayDestructuring": false,                                                                // Infer types on array destructuring
@@ -19,9 +25,5 @@ module.exports = {
               "variableDeclarationIgnoreFunction": true,
           }
       ],
-        "@typescript-eslint/no-inferrable-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-      }
-    },
-  ],  
+  }
 };
