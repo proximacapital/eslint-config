@@ -15,10 +15,7 @@ module.exports = {
 
     overrides: [
         {
-            files: ["*.js", "*.ts"],
-        },
-        {
-            files: ["*.test.ts", "*.demo.ts", "*.bench.ts"],
+            files: ["*.js", "*.ts", "*.test.ts", "*.demo.ts", "*.bench.ts"],
         },
     ],
     ignorePatterns: ["Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
