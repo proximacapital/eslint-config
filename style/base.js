@@ -4,12 +4,7 @@ module.exports = {
   extends: "./verbose-locals.js",
   overrides: [
     {
-      files: ["*.js"],
-      "parserOptions": {
-        "project": [
-          "./tsconfig.json"
-        ]
-      },  
+      files: ["*.js", "*.ts"],
       "rules": {
         "@typescript-eslint/typedef": "off",
         "@typescript-eslint/no-inferrable-types": [
