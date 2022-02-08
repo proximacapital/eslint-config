@@ -13,7 +13,7 @@ module.exports = {
         "eslint-plugin-import",
         "import-newlines",
     ],
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "../correctness/all.js"],
+    extends: ["../correctness/all.js"],
     overrides: [
         {
             files: ["*.js"],
