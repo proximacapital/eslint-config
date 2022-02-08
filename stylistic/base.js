@@ -1,7 +1,7 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
-  extends: "./StrictStyle.js",
+  extends: "./verbose-locals.js",
   overrides: [
     {
       files: ["*.js", "*.ts"],

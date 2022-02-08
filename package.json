@@ -11,8 +11,9 @@
     "npm": ">=7.20.0"
   },
   "exports": {
-    "./lose": "./stylistic/base.js",
-    "./strict": "./stylistic/verbose-locals.js"
+    "./style/base": "./stylistic/base.js",
+    "./style/verbose": "./stylistic/verbose-locals.js",
+    "./correctness/all": "./correctness/all.js"
   },
   "files": [
     "stylistic/*",
