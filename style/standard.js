@@ -31,7 +31,7 @@ module.exports = {
             },
         },
         {
-            files: ["*.js", "*.ts"],
+            files: ["*.ts"],
             "rules": {
               "@typescript-eslint/typedef": "off",
               "@typescript-eslint/no-inferrable-types": [
