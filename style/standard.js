@@ -1,18 +1,6 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
-    root: true,
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-        project: "tsconfig.json",
-        sourceType: "module",
-    },
-    plugins: [
-        "@typescript-eslint",
-        "@typescript-eslint/tslint",
-        "eslint-plugin-import",
-        "import-newlines",
-    ],
     extends: ["../correctness/all.js"],
     overrides: [
         {
