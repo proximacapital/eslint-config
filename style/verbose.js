@@ -19,13 +19,7 @@ module.exports = {
               "variableDeclarationIgnoreFunction": true,
           }
       ],
-        "@typescript-eslint/no-inferrable-types": [
-          "error",
-          {
-            "ignoreParameters": false,
-            "ignoreProperties": false
-          }
-        ],
+        "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
       }
     },
