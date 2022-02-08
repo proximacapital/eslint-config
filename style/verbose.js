@@ -28,6 +28,13 @@ module.exports = {
         ],
         "@typescript-eslint/explicit-function-return-type": "off",
       }
+    },
+    {
+      files: ["*.test.ts", "*.demo.ts", "*.bench.ts"],
+      rules: {
+          "@typescript-eslint/no-non-null-assertion": "off",
+          "@typescript-eslint/dot-notation": "off",
+      },
     }
   ],  
 };

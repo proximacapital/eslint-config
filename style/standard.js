@@ -24,13 +24,6 @@ module.exports = {
             },
         },
         {
-            files: ["*.test.ts", "*.demo.ts", "*.bench.ts"],
-            rules: {
-                "@typescript-eslint/no-non-null-assertion": "off",
-                "@typescript-eslint/dot-notation": "off",
-            },
-        },
-        {
             files: ["*.ts"],
             "rules": {
               "@typescript-eslint/typedef": "off",
