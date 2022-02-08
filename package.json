@@ -11,12 +11,12 @@
     "npm": ">=7.20.0"
   },
   "exports": {
-    "./lose": "./Stylistic/LoseStyle.js",
-    "./strict": "./Stylistic/StrictStyle.js"
+    "./lose": "./stylistic/base.js",
+    "./strict": "./stylistic/verbose-locals.js"
   },
   "files": [
-    "Stylistic/*",
-    "Correctness/*"
+    "stylistic/*",
+    "correctness/*"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
