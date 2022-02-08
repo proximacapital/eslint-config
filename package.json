@@ -11,7 +11,7 @@
     "npm": ">=7.20.0"
   },
   "exports": {
-    "./style/base": "./style/base.js",
+    "./style/standard": "./style/standard.js",
     "./style/verbose": "./style/verbose-locals.js",
     "./correctness/all": "./correctness/all.js"
   },
