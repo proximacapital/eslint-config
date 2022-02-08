@@ -13,7 +13,7 @@ module.exports = {
         "eslint-plugin-import",
         "import-newlines",
     ],
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "../correctness/all.js"],
     overrides: [
         {
             files: ["*.js"],
@@ -21,6 +21,13 @@ module.exports = {
                 "@typescript-eslint/tslint/config": "off",
                 "no-undef": "off",
                 "@typescript-eslint/no-var-requires": "off",
+            },
+        },
+        {
+            files: ["*.test.ts", "*.demo.ts", "*.bench.ts"],
+            rules: {
+                "@typescript-eslint/no-non-null-assertion": "off",
+                "@typescript-eslint/dot-notation": "off",
             },
         },
         {
