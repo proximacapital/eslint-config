@@ -12,7 +12,7 @@
   },
   "exports": {
     "./style/standard": "./style/standard.js",
-    "./style/verbose": "./style/verbose-locals.js",
+    "./style/verbose": "./style/verbose.js",
     "./correctness/all": "./correctness/all.js"
   },
   "files": [
