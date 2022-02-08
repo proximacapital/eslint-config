@@ -11,6 +11,15 @@ module.exports = {
     ],
     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
     ignorePatterns: ["Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
+    overrides: [
+        {
+            files: ["*.test.ts", "*.demo.ts", "*.bench.ts"],
+            rules: {
+                "@typescript-eslint/no-non-null-assertion": "off",
+                "@typescript-eslint/dot-notation": "off",
+            },
+        }
+    ],
     rules: {
         "@typescript-eslint/array-type": ["error", { "default": "array" }],                                 // Prefer number[] over Array<number>
         "@typescript-eslint/dot-notation": "error",                                                         // Disallow obj["prop"] access
