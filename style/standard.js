@@ -43,7 +43,7 @@ module.exports = {
               ],
               "@typescript-eslint/explicit-function-return-type": "error",
             }
-          },
+        },
     ],
     ignorePatterns: ["Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
     rules: {
@@ -126,31 +126,18 @@ module.exports = {
         "eol-last": "error",                                                                                // Force files to end with newline
         "max-len": ["error", { "ignorePattern": "//", "code": 120 }],                                       // Max line-length of 120 columns, ignore comments
         "newline-per-chained-call": "off",                                                                  // Force chained calls (.then) onto new lines
-        "no-extend-native": "error",                                                                        // Disallow adding properties to in-built prototypes
-        "no-async-promise-executor": "error",                                                               // Only allow synchronous promise executors
-        "no-console": "error",                                                                              // Disallow calls to console.log
-        "no-duplicate-imports": "error",                                                                    // Imports from the same file must be merged
         "no-irregular-whitespace": "error",                                                                 // Disallow weird whitespace characters
         "no-multiple-empty-lines": "error",                                                                 // Allow at most one empty line between code
         "no-trailing-spaces": "error",                                                                      // Strip whitespace after line ends
-        "no-useless-escape": "error",                                                                       // Disallow char escapes with no effect
-        "no-useless-call": "error",                                                                         // Disallow uselss usage of .call & .apply
-        "no-useless-catch": "error",                                                                        // Disallow catching only to throw
-        "no-useless-computed-key": ["error", { "enforceForClassMembers": true }],                           // Prefer { a: 0 } over { ["a"]: 0 }
         "object-curly-spacing": ["error", "always"], // TODO: Test { a:0 }                                  // Requires spaces like: { a: 0 }
         "one-var": ["error", "never"],                                                                      // Requires a keyword per declared var
-        "prefer-const": "error",                                                                            // If a var is not re-assigned, force const
         "prefer-spread": "error",                                                                           // Replace .apply with ... where possible
         "spaced-comment": ["error", "always", { "markers": ["/"] }],                                        // Require a space after "//" like in this file
         "space-before-function-paren": ["error", "never"], "space-in-parens": ["error", "never"],           // func(x) vs func (x), we use no space
         "space-before-blocks": ["error", "always"],                                                         // Space before "{}", like func() {}
         "arrow-spacing": "error",                                                                           // Require space before and after =>, () => {}
         "keyword-spacing": "error",                                                                         // Require spaces before and after keywords (if, else)
-        "import/no-default-export": "error",                                                                // Disallow default (unnamed) exports
         "key-spacing": "error",                                                                             // No space before colon in object literals
-        "no-fallthrough": "error",                                                                          // Require explicit comment when switch cases fall through
-        "no-implicit-coercion": "error",
-        "eqeqeq": "error",                                                                                  // enforce === and !==
         "operator-linebreak": [                                                                             // force operators to sit at beginning of new line
             "error",
             "before",
@@ -177,6 +164,40 @@ module.exports = {
                 "ignoredNodes": ["ArrowFunctionExpression", "LogicalExpression", "SwitchCase[consequent]"],
             },
         ],
+        "@typescript-eslint/tslint/config": [                                                               // Legacy tslint rules, runs our semicolon rules
+            "error",
+            {
+                "rules": {
+                    "whitespace": [
+                        true,
+                        "check-branch",
+                        "check-decl",
+                        "check-operator",
+                        "check-separator",
+                        "check-type",
+                        "check-type-operator",
+                        "check-preblock"
+                    ],
+                    "ordered-imports": true,
+                    "semicolon": [true, "always"],
+                },
+            },
+        ],
+        "@typescript-eslint/member-delimiter-style": [                                                      // Require ";" after member declarations
+            "error",                                                                                        // Last ";" is not required on single line
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true,
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false,
+                }
+            }
+        ],
+        "@typescript-eslint/type-annotation-spacing": "error",                                              // const foo: number, space after ":"
+        "@typescript-eslint/quotes": ["error", "double", { "allowTemplateLiterals": true }],                // Use "" quotes instead of '', or ``
        /**
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
