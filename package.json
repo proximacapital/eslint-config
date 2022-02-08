@@ -23,7 +23,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "reinstall": "rm -rf node_modules package-lock.json && npm i"
+    "reinstall": "rm -rf node_modules package-lock.json && npm i",
+    "lint": "npx eslint ."
   },
   "keywords": [
     "eslint",
