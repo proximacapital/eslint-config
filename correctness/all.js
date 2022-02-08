@@ -3,10 +3,6 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 module.exports = {
     root: true,
     parser: "@typescript-eslint/parser",
-    parserOptions: {
-        project: "tsconfig.json",
-        sourceType: "module",
-    },
     plugins: [
         "@typescript-eslint",
         "@typescript-eslint/tslint",
@@ -73,14 +69,5 @@ module.exports = {
                 },
             },
         ],
-
-       /**
-        * Tools for AST:
-        * - AST query language: https://estools.github.io/esquery/
-        * - AST explorer: https://astexplorer.net/
-        * - ESLint on Selectors: https://eslint.org/docs/4.0.0/developer-guide/selectors
-        * - ESLint Indent: https://eslint.org/docs/rules/indent
-        * - Syntax Tree Format: https://esprima.readthedocs.io/en/latest/syntax-tree-format.html
-       **/
     },
 }
