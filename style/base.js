@@ -4,7 +4,7 @@ module.exports = {
   extends: "./verbose-locals.js",
   overrides: [
     {
-      files: ["*.js", "*.ts"],
+      files: ["*.js"],
       "parserOptions": {
         "project": [
           "./tsconfig.json"
