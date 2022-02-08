@@ -108,19 +108,6 @@ module.exports = {
                 "format": ["camelCase", "PascalCase", "UPPER_CASE"],
             },
         ],
-        "@typescript-eslint/typedef": [
-            "error",
-            {
-                "arrayDestructuring": false,                                                                // Infer types on array destructuring
-                "arrowParameter": true,
-                "memberVariableDeclaration": true,
-                "objectDestructuring": false,                                                               // Infer types on object destructuring
-                "parameter": true,
-                "propertyDeclaration": true,
-                "variableDeclaration": true,
-                "variableDeclarationIgnoreFunction": true,
-            }
-        ],
         "arrow-parens": ["error", "always"],                                                                // Force parens around arrow arguments
         "brace-style": ["error", "allman", { "allowSingleLine": true }],                                    // Parenthetically correct braces
         "comma-dangle": [                                                                                   // Force dangling commas if }/]/) appears on newline
