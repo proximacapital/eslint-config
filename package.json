@@ -11,12 +11,12 @@
     "npm": ">=7.20.0"
   },
   "exports": {
-    "./style/base": "./stylistic/base.js",
-    "./style/verbose": "./stylistic/verbose-locals.js",
+    "./style/base": "./style/base.js",
+    "./style/verbose": "./style/verbose-locals.js",
     "./correctness/all": "./correctness/all.js"
   },
   "files": [
-    "stylistic/*",
+    "style/*",
     "correctness/*"
   ],
   "publishConfig": {
