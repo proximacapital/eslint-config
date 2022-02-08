@@ -21,7 +21,7 @@ module.exports = {
         {
             files: ["*.ts"],
             "rules": {
-            }
+            },
         },
     ],
     ignorePatterns: ["Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
@@ -65,17 +65,17 @@ module.exports = {
             {
                 "selector": "interface",
                 "format": ["PascalCase"],
-                "prefix": ["I"]
+                "prefix": ["I"],
             },
             {
                 "selector": "typeAlias",
                 "format": ["PascalCase"],
-                "prefix": ["T", "__T"]
+                "prefix": ["T", "__T"],
             },
             {
                 "selector": "enum",
                 "format": ["PascalCase"],
-                "prefix": ["E"]
+                "prefix": ["E"],
             },
             {
                 "selector": "variableLike",
@@ -131,9 +131,9 @@ module.exports = {
             {
                 "overrides":
                 {
-                    "=": "ignore"
-                }
-            }
+                    "=": "ignore",
+                },
+            },
         ],
         "import-newlines/enforce": [
             "error",
@@ -141,7 +141,7 @@ module.exports = {
                 "items": 6,
                 "max-len": 120,
                 "semi": false,
-            }
+            },
         ],
         "indent": [
             "error",
@@ -163,7 +163,7 @@ module.exports = {
                         "check-separator",
                         "check-type",
                         "check-type-operator",
-                        "check-preblock"
+                        "check-preblock",
                     ],
                     "ordered-imports": true,
                     "semicolon": [true, "always"],
@@ -180,12 +180,12 @@ module.exports = {
                 "singleline": {
                     "delimiter": "semi",
                     "requireLast": false,
-                }
-            }
+                },
+            },
         ],
         "@typescript-eslint/type-annotation-spacing": "error",                                              // const foo: number, space after ":"
         "@typescript-eslint/quotes": ["error", "double", { "allowTemplateLiterals": true }],                // Use "" quotes instead of '', or ``
-       /**
+        /**
         * Tools for AST:
         * - AST query language: https://estools.github.io/esquery/
         * - AST explorer: https://astexplorer.net/
