@@ -13,7 +13,7 @@
   "exports": {
     "./style/standard": "./style/standard.js",
     "./style/verbose": "./style/verbose.js",
-    "./correctness": "./correctness"
+    "./correctness": "./correctness/index.js"
   },
   "files": [
     "style/*",
