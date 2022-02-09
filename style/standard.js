@@ -1,7 +1,7 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
-    extends: ["../correctness/all.js"],
+    extends: ["../correctness/index.js"],
     overrides: [
         {
             files: ["*.js"],
