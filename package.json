@@ -18,7 +18,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "reinstall": "rm -rf node_modules package-lock.json && npm i"
+    "reinstall": "rm -rf node_modules package-lock.json && npm i",
+    "lint": "markdownlint ."
   },
   "keywords": [
     "eslint",
@@ -36,6 +37,8 @@
     "@typescript-eslint/eslint-plugin-tslint": "5.4.0",
     "@typescript-eslint/parser": "5.4.0",
     "eslint": "8.3.0",
+    "markdownlint": "0.24.0",
+    "markdownlint-cli": "0.30.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-import-newlines": "1.1.5",
     "tslint": "6.1.3"
