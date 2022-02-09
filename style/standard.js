@@ -18,11 +18,6 @@ module.exports = {
                 "@typescript-eslint/dot-notation": "off",
             },
         },
-        {
-            files: ["*.ts"],
-            "rules": {
-            },
-        },
     ],
     ignorePatterns: ["Gulpfile.js", ".github", "Logs", "Dist", "Routes", "coverage"],
     rules: {
