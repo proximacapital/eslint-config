@@ -10,21 +10,29 @@
     "node": "^16.6.1",
     "npm": ">=7.20.0"
   },
-  "main": "index.js",
+  "exports": {
+    "./style/standard": "./style/standard.js",
+    "./style/verbose": "./style/verbose.js",
+    "./correctness": "./correctness/index.js"
+  },
   "files": [
-    "index.js"
+    "style/*",
+    "correctness/*"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "reinstall": "rm -rf node_modules package-lock.json && npm i",
-    "lint": "markdownlint ."
+    "lint": "npx eslint . && markdownlint ."
   },
   "keywords": [
     "eslint",
     "eslintconfig"
   ],
+  "eslintConfig": {
+    "extends": "./style/standard.js"
+  },
   "description": "This repo contains Proxima's canonical `eslint` config, it is strongly recommended that you keep your `TypeScript` repositories in-line with this config where possible. Currently all the rules are sitting inside the `index.js` (which is exported via the `package.json`); however a refactor may eventually occur that breaks the rules up into various files for easier management.",
   "bugs": {
     "url": "https://github.com/proximacapital/eslint-config/issues"
