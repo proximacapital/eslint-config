@@ -1,0 +1,37 @@
+name: lint.yml
+
+on:
+  push:
+    branches:
+      - prod
+      - stage
+      - dev
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@afe4af09a72596f47d806ee5f8b2674ec07fdc73
+      with:
+          fetch-depth: 0
+
+    - name: Load .nvmrc
+      run: echo ::set-output name=NVMRC::"$(cat .nvmrc)"
+      id: nvm
+
+    - name: Setup node '${{ steps.nvm.outputs.NVMRC }}'
+      uses: actions/setup-node@041bafb67276a76a9cc88cd8a4e99165e9eb287d
+      with:
+        node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
+    - name: Install dependencies
+      env:
+        PROXIMA_PACKAGE_TOKEN: ${{ secrets.PROXIMA_CI }}
+      run: npm ci
+
+    - name: Lint
+      run: npm run lint
