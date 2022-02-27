@@ -32,13 +32,50 @@ In either case, you'll need to add the following dev dependencies to your `packa
 }
 ```
 
+### Different type of eslint configs
+
+There are currently three different types of configs available to use under two
+different catagories.
+
+## Correctness
+
+The correctness rule set is all of our current eslint config rules that keep the
+code in a correct manor, i.e `if(true)` is always truthy and shouldn't be in our
+ code base.
+
+## Style
+
+The style rule set encompasses all of our stylist rules. We have two subsets of
+these, Verbose and Standard. The difference between the two is that standard allows
+type-inferring while the verbose rule set makes the dev declare what type the type
+is on the variable.
+
+i.e.
+
+Standard: `const lExampleVar = aClass.GetVar();`
+
+Verbose: `const lExampleVar: ExampleType = aClass.GetVar();`
+
+These eslint configs both extend correctness. This is because correctness should
+always be used and when we import more than one eslint config, there overrides
+clash which can lead to correctness-rules/style-rules missing.
+
 ### `package.json` modifications
 
-This is the slickest way to access the config. Add the following object to the `package.json`:
+This is the slickest way to access the config. Add one of the following objects
+to the `package.json`:
 
 ```json
 "eslintConfig": {
-  "extends": "@proxima-oss/eslint-config"
+    "extends": "@proxima-oss/eslint-config/style/standard"
+},
+
+"eslintConfig": {
+    "extends": "@proxima-oss/eslint-config/style/verbose"
+},
+
+"eslintConfig": {
+    "extends": "@proxima-oss/eslint-config/correctness"
 },
 ```
 
@@ -49,7 +86,15 @@ in your root directory. That is,
 ```js
 // repo_root/.eslintrc.js
 module.exports = {
-    extends: "@proxima-oss/eslint-config"
+    "extends": "@proxima-oss/eslint-config/style/standard"
+}
+
+module.exports = {
+    "extends": "@proxima-oss/eslint-config/style/verbose"
+}
+
+module.exports = {
+    "extends": "@proxima-oss/eslint-config/correctness"
 }
 ```
 
