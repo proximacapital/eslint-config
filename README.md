@@ -11,11 +11,6 @@ This package has peer dependencies and you'll want to resolve them when
 using this as a dev dependency.
 See the [package.json](https://github.com/proximacapital/typescript-template/blob/dev/package.json).
 
-## Usage
-
-There are two ways to use this config. Either through the `package.json`
-or a dedicated `.eslintrc(.js)` file.
-
 ### Different type of eslint configs
 
 There are currently three different types of configs available to use under two
