@@ -16,22 +16,6 @@ See the [package.json](https://github.com/proximacapital/typescript-template/blo
 There are two ways to use this config. Either through the `package.json`
 or a dedicated `.eslintrc(.js)` file.
 
-In either case, you'll need to add the following dev dependencies to your `package.json`:
-
-```json
-"devDependencies": {
-  "@proxima-oss/eslint-config": "0.0.2",
-  "@typescript-eslint/eslint-plugin": "4.29.1",
-  "@typescript-eslint/eslint-plugin-tslint": "4.29.1",
-  "@typescript-eslint/parser": "4.29.1",
-  "eslint": "7.32.0",
-  "eslint-plugin-import": "2.24.0",
-  "eslint-plugin-import-newlines": "1.1.4",
-  "eslint-plugin-typescript-sort-keys": "1.7.0",
-  "eslint-plugin-unicorn": "35.0.0",
-}
-```
-
 ### Different type of eslint configs
 
 There are currently three different types of configs available to use under two
