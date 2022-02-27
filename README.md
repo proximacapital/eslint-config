@@ -2,25 +2,19 @@
 
 This repo contains Proxima's canonical `eslint` config, it is strongly
 recommended that you keep your `TypeScript` repositories in-line with
-this config where possible. Currently all the rules are sitting inside
-the `index.js` (which is exported via the `package.json`); however a
-refactor may eventually occur that breaks the rules up into various files
-for easier management.
-
-This package has peer dependencies and you'll want to resolve them when
-using this as a dev dependency.
-See the [package.json](https://github.com/proximacapital/typescript-template/blob/dev/package.json).
+this config where possible.
 
 ## Different type of eslint configs
 
 There are currently three different types of configs available to use under two
-different catagories.
+different catagories. You can access the config two ways. Either through the `package.json`
+or a dedicated `.eslintrc(.js)` file.
 
 ### Correctness
 
 The correctness rule set is all of our current eslint config rules that keep the
 code in a correct manor, i.e `if(true)` is always truthy and shouldn't be in our
- code base.
+code base.
 
 ### Style
 
