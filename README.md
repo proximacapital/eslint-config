@@ -16,13 +16,13 @@ See the [package.json](https://github.com/proximacapital/typescript-template/blo
 There are currently three different types of configs available to use under two
 different catagories.
 
-## Correctness
+### Correctness
 
 The correctness rule set is all of our current eslint config rules that keep the
 code in a correct manor, i.e `if(true)` is always truthy and shouldn't be in our
  code base.
 
-## Style
+### Style
 
 The style rule set encompasses all of our stylist rules. We have two subsets of
 these, Verbose and Standard. The difference between the two is that standard allows
