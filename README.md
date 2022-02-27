@@ -11,7 +11,7 @@ This package has peer dependencies and you'll want to resolve them when
 using this as a dev dependency.
 See the [package.json](https://github.com/proximacapital/typescript-template/blob/dev/package.json).
 
-### Different type of eslint configs
+## Different type of eslint configs
 
 There are currently three different types of configs available to use under two
 different catagories.
