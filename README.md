@@ -2,43 +2,53 @@
 
 This repo contains Proxima's canonical `eslint` config, it is strongly
 recommended that you keep your `TypeScript` repositories in-line with
-this config where possible. Currently all the rules are sitting inside
-the `index.js` (which is exported via the `package.json`); however a
-refactor may eventually occur that breaks the rules up into various files
-for easier management.
+this config where possible.
 
-This package has peer dependencies and you'll want to resolve them when
-using this as a dev dependency.
-See the [package.json](https://github.com/proximacapital/typescript-template/blob/dev/package.json).
+## Different type of eslint configs
 
-## Usage
-
-There are two ways to use this config. Either through the `package.json`
+There are currently three different types of configs available to use under two
+different catagories. You can access the config two ways. Either through the `package.json`
 or a dedicated `.eslintrc(.js)` file.
 
-In either case, you'll need to add the following dev dependencies to your `package.json`:
+### Correctness
 
-```json
-"devDependencies": {
-  "@proxima-oss/eslint-config": "0.0.2",
-  "@typescript-eslint/eslint-plugin": "4.29.1",
-  "@typescript-eslint/eslint-plugin-tslint": "4.29.1",
-  "@typescript-eslint/parser": "4.29.1",
-  "eslint": "7.32.0",
-  "eslint-plugin-import": "2.24.0",
-  "eslint-plugin-import-newlines": "1.1.4",
-  "eslint-plugin-typescript-sort-keys": "1.7.0",
-  "eslint-plugin-unicorn": "35.0.0",
-}
-```
+The correctness rule set is all of our current eslint config rules that keep the
+code in a correct manor, i.e `if(true)` is always truthy and shouldn't be in our
+code base.
+
+### Style
+
+The style rule set encompasses all of our stylist rules. We have two subsets of
+these, Verbose and Standard. The difference between the two is that standard allows
+type-inferring while the verbose rule set makes the dev declare what type the type
+is on the variable.
+
+i.e.
+
+Standard: `const lExampleVar = aClass.GetVar();`
+
+Verbose: `const lExampleVar: ExampleType = aClass.GetVar();`
+
+These eslint configs both extend correctness. This is because correctness should
+always be used and when we import more than one eslint config, there overrides
+clash which can lead to correctness-rules/style-rules missing.
 
 ### `package.json` modifications
 
-This is the slickest way to access the config. Add the following object to the `package.json`:
+This is the slickest way to access the config. Add one of the following objects
+to the `package.json`:
 
 ```json
 "eslintConfig": {
-  "extends": "@proxima-oss/eslint-config"
+    "extends": "@proxima-oss/eslint-config/style/standard"
+},
+
+"eslintConfig": {
+    "extends": "@proxima-oss/eslint-config/style/verbose"
+},
+
+"eslintConfig": {
+    "extends": "@proxima-oss/eslint-config/correctness"
 },
 ```
 
@@ -49,7 +59,15 @@ in your root directory. That is,
 ```js
 // repo_root/.eslintrc.js
 module.exports = {
-    extends: "@proxima-oss/eslint-config"
+    "extends": "@proxima-oss/eslint-config/style/standard"
+}
+
+module.exports = {
+    "extends": "@proxima-oss/eslint-config/style/verbose"
+}
+
+module.exports = {
+    "extends": "@proxima-oss/eslint-config/correctness"
 }
 ```
 
