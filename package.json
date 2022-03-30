@@ -48,7 +48,7 @@
     "markdownlint": "0.25.1",
     "markdownlint-cli": "0.31.1",
     "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-import-newlines": "1.1.8",
+    "eslint-plugin-import-newlines": "1.2.2",
     "tslint": "6.1.3"
   }
 }
